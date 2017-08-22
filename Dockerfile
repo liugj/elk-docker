@@ -44,7 +44,7 @@ ENV ELK_VERSION 5.5.1
 ### install Elasticsearch
 
 ENV ES_VERSION ${ELK_VERSION}
-ENV ES_HOME /opt/elasticsearch
+ENV ES_HOME /usr/share/elasticsearch
 ENV ES_PACKAGE elasticsearch-${ES_VERSION}.tar.gz
 ENV ES_GID 991
 ENV ES_UID 991
@@ -66,7 +66,7 @@ RUN sed -i -e 's#^ES_HOME=$#ES_HOME='$ES_HOME'#' /etc/init.d/elasticsearch \
 ### install Logstash
 
 ENV LOGSTASH_VERSION ${ELK_VERSION}
-ENV LOGSTASH_HOME /opt/logstash
+ENV LOGSTASH_HOME /usr/share/logstash
 ENV LOGSTASH_PACKAGE logstash-${LOGSTASH_VERSION}.tar.gz
 ENV LOGSTASH_GID 992
 ENV LOGSTASH_UID 992
@@ -88,7 +88,7 @@ RUN sed -i -e 's#^LS_HOME=$#LS_HOME='$LOGSTASH_HOME'#' /etc/init.d/logstash \
 ### install Kibana
 
 ENV KIBANA_VERSION ${ELK_VERSION}
-ENV KIBANA_HOME /opt/kibana
+ENV KIBANA_HOME /usr/share/kibana
 ENV KIBANA_PACKAGE kibana-${KIBANA_VERSION}-linux-x86_64.tar.gz
 ENV KIBANA_GID 993
 ENV KIBANA_UID 993
